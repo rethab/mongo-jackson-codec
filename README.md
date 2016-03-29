@@ -32,7 +32,7 @@ Usage
 
     CodecRegistry codecRegistry = CodecRegistries.fromRegistries(
             MongoClients.getDefaultCodecRegistry(), CodecRegistries.fromProviders(
-                    new ObjectCodecProvider(ObjectMapperFactory.createObjectMapper())));
+                    new JacksonCodecProvider(ObjectMapperFactory.createObjectMapper())));
 
     MongoDatabase database = client.getDatabase("blog").withCodecRegistry(codecRegistry);
 
